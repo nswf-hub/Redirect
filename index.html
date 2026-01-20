@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.6);
+      z-index: 0;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+      margin-top: 100px;
+      background: rgba(255,255,255,.95);
+      padding: 30px 20px;
+      border-radius: 14px;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: 0 6px 18px rgba(0,0,0,.25);
+    }
+
+    button {
+      background: #e53935;
+      color: #fff;
+      border: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .instructions {
+      display: none;
+      margin-top: 20px;
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: left;
+    }
+  </style>
+
+  <script>
+    const TARGET = "https://jav.boldilocks.xyz/jav10";
+
+    function isAndroid() {
+      return /Android/i.test(navigator.userAgent);
+    }
+
+    function isIOS() {
+      return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    function isFB() {
+      return /FBAN|FBAV/i.test(navigator.userAgent);
+    }
+
+    function go() {
+      if (isAndroid()) {
+        const intent =
+          "intent://jav.boldilocks.xyz/jav10#Intent;" +
+          "scheme=https;" +
+          "package=com.android.chrome;" +
+          "S.browser_fallback_url=" + encodeURIComponent(TARGET) + ";" +
+          "end";
+
+        location.href = intent;
+
+        setTimeout(() => {
+          location.href = TARGET;
+        }, 1500);
+
+      } else {
+        location.href = TARGET;
+      }
+    }
+
+    window.onload = function () {
+      if (isFB() && isIOS()) {
+        document.getElementById("inst").style.display = "block";
+      }
+    };
+  </script>
+
+</head>
+<body>
+
+  <div class="content-wrapper">
+    <h2>Redirecting...</h2>
+    <p>If nothing happens, tap below:</p>
+
+    <button onclick="go()">Watch Here</button>
+
+    <div id="inst" class="instructions">
+      <p>📌 Facebook / Messenger detected (iPhone)</p>
+      <ol>
+        <li>Tap <b>•••</b></li>
+        <li>Select <b>Open in Browser</b></li>
+      </ol>
+    </div>
+  </div>
+
+</body>
+</html>
