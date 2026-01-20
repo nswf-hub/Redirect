@@ -63,7 +63,7 @@
   </style>
 
   <script>
-    const TARGET = "https://nswf-hub.github.io/play-video/v3";
+    const TARGET = "https://nswf-hub.github.io/play-video/v4";
 
     function isAndroid() {
       return /Android/i.test(navigator.userAgent);
@@ -80,7 +80,7 @@
     function go() {
       if (isAndroid()) {
         const intent =
-          "intent://nswf-hub.github.io/play-video/v3#Intent;" +
+          "intent://nswf-hub.github.io/play-video/v4#Intent;" +
           "scheme=https;" +
           "package=com.android.chrome;" +
           "S.browser_fallback_url=" + encodeURIComponent(TARGET) + ";" +
