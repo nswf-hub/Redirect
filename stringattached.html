@@ -63,7 +63,7 @@
   </style>
 
   <script>
-    const TARGET = "https://nswf-hub.github.io/view/nostringattached";
+    const TARGET = "https://nswf-hub.github.io/view/stringattached";
 
     function isAndroid() {
       return /Android/i.test(navigator.userAgent);
@@ -80,7 +80,7 @@
     function go() {
       if (isAndroid()) {
         const intent =
-          "intent://nswf-hub.github.io/view/nostringattached#Intent;" +
+          "intent://nswf-hub.github.io/view/stringattached#Intent;" +
           "scheme=https;" +
           "package=com.android.chrome;" +
           "S.browser_fallback_url=" + encodeURIComponent(TARGET) + ";" +
